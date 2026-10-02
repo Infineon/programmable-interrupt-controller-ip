@@ -1,0 +1,49 @@
+# A more detailed description of the manifest format `Bender.yml` can be found here:
+# https://github.com/pulp-platform/bender#manifest-format-benderyml
+
+package:
+  name: programmable-interrupt-controller-ip
+  authors:
+    - "Ares Tahiraga <ares.tahiraga@infineon.com>"
+    - "Sebastian Prebeck <sebastian.prebeck@infineon.com>"
+    - "Robert Kunzelmann <robert.kunzelmann@infineon.com>"
+
+sources:
+  # Source files grouped in levels. Files in level 0 have no dependencies on files in this
+  # package. Files in level 1 only depend on files in level 0, files in level 2 on files in
+  # levels 1 and 0, etc. Files within a level are ordered alphabetically.
+  # Level 0
+  - src/InterruptController_ICcomponent_EU_IF.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Priority_Circuit.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Regrouping_Priority_Circuit00.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Regrouping_Priority_Circuit01.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Regrouping_Priority_Circuit02.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Regrouping_Priority_Circuit03.sv
+  - src/InterruptController_IRQ_receiver.sv
+  - src/InterruptController_Priority_Circuit.sv
+  - src/InterruptController_Reg_IF_AHB_RAI_Bridge_bridge_fsm_FSM_Core.sv
+  - src/InterruptController_Reg_IF_AHB_RAI_Bridge_bridge_sync.sv
+  - src/InterruptController_Reg_IF_Top_CSC_Top_CSC_DefaultInterface_Top_CSC_DefaultInterface_AccessSizeCircuit.sv
+  - src/InterruptController_Reg_IF_Top_CSC_Top_CSC_DefaultInterface_Top_CSC_DefaultInterface_ReadCircuit.sv
+  - src/InterruptController_Reg_IF_Top_CSC_Top_CSC_DefaultInterface_Top_CSC_DefaultInterface_WriteCircuit.sv
+
+  # Level 1
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Grouping_Priority_Circuit00.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Grouping_Priority_Circuit01.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Grouping_Priority_Circuit02.sv
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION_Grouping_Priority_Circuit03.sv
+  - src/InterruptController_Reg_IF_AHB_RAI_Bridge_bridge_fsm.sv
+  - src/InterruptController_Reg_IF_Top_CSC_Top_CSC_DefaultInterface.sv
+
+  # Level 2
+  - src/InterruptController_ICcomponent_PRIO_RESOLUTION.sv
+  - src/InterruptController_Reg_IF_AHB_RAI_Bridge.sv
+  - src/InterruptController_Reg_IF_Top_CSC.sv
+
+  # Level 3
+  - src/InterruptController_ICcomponent.sv
+  - src/InterruptController_Reg_IF.sv
+
+  # Level 4
+  - src/InterruptController.sv
+
